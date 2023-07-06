@@ -25,7 +25,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String stmt = "CREATE TABLE mhstb (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAMA + " TEXT, " + COLUMN_NIM + " TEXT, " + COLUMN_NO_HP + " TEXT)";
+        String stmt = "CREATE TABLE mhstb (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " + COLUMN_NAMA + " TEXT, " + COLUMN_NIM + " TEXT, " + COLUMN_NO_HP + " TEXT)";
         sqLiteDatabase.execSQL(stmt);
     }
 
@@ -55,6 +55,8 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
 
+
+
         ArrayList<MhsModel> mhsList = new ArrayList<>();
 
         if(cursor.getCount()> 0){
@@ -68,6 +70,7 @@ public class DbHelper extends SQLiteOpenHelper {
             }
         }
         return mhsList;
+
     }
 
     public boolean hapus(int id){

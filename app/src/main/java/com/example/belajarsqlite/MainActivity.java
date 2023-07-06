@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Data Gagal Disimpan", Toast.LENGTH_SHORT).show();
                     }
 
+                    if(stts >4){Toast.makeText(getApplicationContext(), "Data telah terisi maksimal", Toast.LENGTH_SHORT).show();}
+
 
 
                     //intent_list.putParcelableArrayListExtra("mhsList", mhsList);
